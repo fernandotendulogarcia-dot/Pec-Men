@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pac-Man — JavaScript Puro</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="game-container">
+    <h1>PAC-MAN</h1>
+
+    <div id="hud">
+      <div class="hud-item">Pontuação: <span id="score-value">0</span></div>
+      <div class="hud-item">Vidas: <span id="lives-value">3</span></div>
+    </div>
+
+    <div id="canvas-wrapper">
+      <canvas id="game-canvas"></canvas>
+
+      <div id="overlay" class="hidden">
+        <h2 id="overlay-title">Pac-Man</h2>
+        <p id="overlay-message"></p>
+        <button id="start-btn" class="hidden">Começar</button>
+        <button id="restart-btn" class="hidden">Reiniciar Jogo</button>
+      </div>
+    </div>
+
+    <!-- Controles de toque para dispositivos móveis -->
+    <div id="touch-controls">
+      <button data-dir="UP" class="pad up">▲</button>
+      <div class="pad-row">
+        <button data-dir="LEFT" class="pad left">◀</button>
+        <button data-dir="DOWN" class="pad down">▼</button>
+        <button data-dir="RIGHT" class="pad right">▶</button>
+      </div>
+    </div>
+
+    <p class="hint"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

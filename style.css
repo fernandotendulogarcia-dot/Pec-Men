@@ -1,0 +1,167 @@
+/* ===================== Reset e base ===================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 20%, #14142b 0%, #05050f 70%);
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+#game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+h1 {
+  color: #ffe600;
+  letter-spacing: 6px;
+  font-size: 28px;
+  text-shadow: 0 0 10px rgba(255, 230, 0, 0.6);
+}
+
+/* ===================== HUD ===================== */
+#hud {
+  display: flex;
+  gap: 24px;
+  font-size: 16px;
+}
+
+.hud-item {
+  background: #10102a;
+  border: 2px solid #2323e0;
+  border-radius: 6px;
+  padding: 6px 14px;
+}
+
+#score-value {
+  color: #ffe600;
+  font-weight: bold;
+}
+
+#lives-value {
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+/* ===================== Canvas ===================== */
+#canvas-wrapper {
+  position: relative;
+  border: 3px solid #2323e0;
+  border-radius: 8px;
+  box-shadow: 0 0 25px rgba(35, 35, 224, 0.5);
+  max-width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+#game-canvas {
+  display: block;
+  max-width: 90vw;
+  height: auto;
+  background: #000;
+}
+
+/* ===================== Overlay (mensagens) ===================== */
+#overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 14px;
+  padding: 20px;
+}
+
+#overlay.hidden {
+  display: none;
+}
+
+#overlay-title {
+  font-size: 26px;
+  color: #ffe600;
+  text-shadow: 0 0 8px rgba(255, 230, 0, 0.7);
+}
+
+#overlay-message {
+  font-size: 14px;
+  color: #ddd;
+  max-width: 400px;
+}
+
+#overlay button {
+  background: #ffe600;
+  color: #111;
+  border: none;
+  padding: 10px 22px;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: transform 0.1s ease, background 0.2s ease;
+}
+
+#overlay button:hover {
+  background: #fff37a;
+  transform: scale(1.05);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ===================== Controles de toque ===================== */
+#touch-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.pad-row {
+  display: flex;
+  gap: 40px;
+}
+
+.pad {
+  width: 48px;
+  height: 48px;
+  background: #10102a;
+  border: 2px solid #2323e0;
+  color: #ffe600;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.pad:active {
+  background: #2323e0;
+}
+
+.hint {
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+}
+
+@media (min-width: 700px) {
+  #touch-controls {
+    display: none;
+  }
+}
